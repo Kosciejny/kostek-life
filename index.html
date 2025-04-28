@@ -25,8 +25,12 @@
     &copy; 2025 Kostek
   </footer>
 <script>
-fetch('https://api.countapi.xyz/hit/kostecki.life/visits');
+if (!localStorage.getItem('visitorCounted')) {
+  fetch('https://your-worker-name.kostecki.workers.dev/', { method: 'POST' });
+  localStorage.setItem('visitorCounted', 'true');
+}
 </script>
+
 
 </body>
 </html>
