@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Human Mind</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../physics.html">Physics</a>
+    <a href="../climbing.html">Climbing & Random Things</a>
+  </nav>
+  <h1>The Problems with Simulations</h1>
+</header>
+
+<main>
+<p class="post-meta">Published: April 28, 2025</p>
+
+<article class="post-article">
+
+<h2>Introduction</h2>
+<p>In modern times, when almost everyone has access to extremely powerful computational tools, numerical analysis seems more and more convincing. In this post, I will attempt to discuss its limitations, especially when considering practical scenarios.</p>
+
+<h2>Types of Problems</h2>
+<ul>
+  <li>Modeling errors</li>
+  <li>Numerical errors</li>
+  <li>Experimental errors</li>
+</ul>
+
+<h2>Modeling Errors</h2>
+<p>Modeling errors appear when the model is not well understood, when the processes governing the problem are analyzed in a simplified form, or when the domain is poorly selected. Sometimes, additional important factors are simply not accounted for. This might be the most critical error type — it can drastically change the simulation outcome.</p>
+<p>While it is usually impossible to perfectly describe any model, it might still be possible to limit how much the results are affected. Let's consider a theoretical model for the Wirtz pump I developed — it assumed a static, frictionless setup! Of course, the friction of liquid is minimal, but still real. Considering rotation would have allowed a more dynamic and realistic approach, especially for pumps that aren't fully capillary. Due to these simplifications, the initial model proved to be quite inaccurate.</p>
+
+<h2>Numerical Errors</h2>
+<p>Two main types of numerical errors are usually considered:</p>
+<ul>
+  <li>Round-off error</li>
+  <li>Truncation error</li>
+</ul>
+
+<h3>1. Round-off Error</h3>
+<p>The round-off error arises when an algorithm with finite precision evaluates an arithmetic expression. Let's take \( \frac{1}{3} \) as an example. To us, it's obviously \( 0.\overline{3} \), but to an algorithm, due to limited precision, it might be represented as \( 0.333333 \). Calculating the difference, we get \( 0.00000003\overline{3} \) — tiny, but significant when scaled up.</p>
+<p>A tragic real-world example is the failure of a Patriot missile system during the Gulf War, resulting in the deaths of 28 Americans. The system miscalculated the distance to an incoming Scud missile by over 500 meters. The cause? Time tracking every 0.1 seconds stored in a 24-bit register, which couldn't perfectly represent 0.1 in binary.</p>
+<p>The stored approximation was:</p>
+
+$$
+E = \frac{1}{10} - \frac{209715}{2097152} = 9.537 \times 10^{-8}
+$$
+
+<p>After about 100 hours of continuous operation, the time error accumulated to:</p>
+
+$$
+\Delta t = E \times t = 0.3433 \text{ seconds}
+$$
+
+<p>This slight timing offset was enough to miscalculate the missile's position and miss the interception entirely.</p>
+
+<h3>2. Truncation Error</h3>
+<p>Truncation error appears when algorithms approximate mathematical functions. A classic example is the Maclaurin series for \( e^x \):</p>
+
+$$
+e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dotsc
+$$
+
+<p>Approximating \( e^x \) using only the first four terms can cause large errors. The more terms we include, the smaller the error — but it never becomes exactly zero.</p>
+<p>Another example involves numerical integration:</p>
+
+$$
+\int_0^2 x^2 \, dx
+$$
+
+<p>The exact solution is:</p>
+
+$$
+\int x^2 \, dx = \frac{x^3}{3} + C
+$$
+
+$$
+\left. \frac{x^3}{3} \right|_0^2 = \frac{8}{3}
+$$
+
+<p>Using a left-hand Riemann sum with two rectangles:</p>
+
+$$
+f(0) \times 1 + f(1) \times 1 = (0^2) \times 1 + (1^2) \times 1 = 1
+$$
+
+<p>The resulting truncation error is:</p>
+
+$$
+E = \frac{8}{3} - 1 = \frac{5}{3}
+$$
+
+<p>— clearly quite large.</p>
+
+<h2>Experimental Errors</h2>
+<p>When measuring real-world phenomena, it is impossible to obtain perfectly exact results. There is always some measurement uncertainty. Noise, environmental influences, and human mistakes all introduce small but real variations into the data.</p>
+<p>For example, when measuring an object's weight on a very precise scale, uncertainties arise from air currents, electromagnetic noise, gravitational variations, and even thermal radiation — not just from the instrument itself.</p>
+
+<h2>Summary</h2>
+<p>While it might never be possible to eliminate all errors, we can — and should — minimize them as much as possible. I think the limitations of numerical simulations are a fascinating topic, with much left to explore and improve.</p>
+
+</article>
+
+
+</main>
+
+<script>
+if (!localStorage.getItem('visitorCounted')) {
+  fetch('https://shiny-resonance-a493.kosteksw3.workers.dev/', { method: 'POST' });
+  localStorage.setItem('visitorCounted', 'true');
+}
+</script>
+
+<footer>
+  &copy; 2025 Kostek
+</footer>
+
+</body>
+</html>
