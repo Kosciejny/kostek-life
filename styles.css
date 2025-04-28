@@ -58,6 +58,9 @@ main {
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   
 }
 
@@ -68,9 +71,11 @@ main {
 
 .post-card img {
   width: 100%;
-  height: 150px;
+  aspect-ratio: 4 / 3; /* Or whatever fits nicely */
   object-fit: cover;
+  display: block;
 }
+
 
 .card-content {
   padding: 1rem;
@@ -108,6 +113,9 @@ footer {
 .post-article h2 {
   margin-top: 2rem;
   color: #1eabe8;
+}
+.post-article h3 {
+	color: black;
 }
 
 .post-article ul {
