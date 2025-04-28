@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randomness</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../physics.html">Physics</a>
+    <a href="../climbing.html">Climbing & Random Things</a>
+  </nav>
+  <h1>Randomness</h1>
+</header>
+
+<main>
+<p class="post-meta">Published: April 26, 2025</p>
+<article class="post-article">
+
+  <h2>Introduction</h2>
+  <p>When we say "random," we usually mean something that lacks a pattern — something unpredictable. But is there really anything, in a physical sense, that is truly random?</p>
+
+  <h2>Common Misconceptions</h2>
+  <p>We often say that something, like a number generator, is random. In fact, most people don't realize how these systems actually work. Think about it: using a binary processor, how could we achieve true randomness algorithmically? It's simply impossible. Therefore, we use so-called pseudo-random generation methods. A common example is taking the precise system time and manipulating its digits. While this is unpredictable for a human, it isn't truly random — and once a user understands the algorithm, they can predict or manipulate the outcomes.</p>
+
+  <p>When we flip a coin, we usually think it's a "random" 50/50 chance. But in reality, it’s neither truly random, nor exactly 50/50, even across large samples. If we knew all the initial conditions precisely, we could easily predict which side the coin would land on. In fact, scientists have built mechanical arms capable of flipping coins with such precision that they always land on the intended side. Furthermore, coins are not perfectly symmetrical, and human throws are imperfect — so in reality, the chances aren't exactly 50%. Experiments confirm this slight bias.</p>
+
+  <h2>So Where Is True Randomness?</h2>
+  <p>In the world of quantum mechanics, randomness appears to be fundamental. While the interpretation of quantum mechanics is still debated, it is widely accepted that even with complete information, we cannot predict exactly when a given atom will decay. We can only calculate the probability of decay within a certain time frame. This kind of unpredictability — independent of any hidden cause — is the purest form of randomness we know.</p>
+  <p>For those curious, this question — whether hidden variables might actually exist — was explored and heavily challenged by <a href="https://en.wikipedia.org/wiki/Bell%27s_theorem" target="_blank">Bell's Theorem</a> (1964), which showed that no local hidden variable theories can fully reproduce the predictions of quantum mechanics. Experiments testing Bell’s inequalities strongly support the idea that quantum randomness is real.</p>
+
+  <h2>Quantum to Classical</h2>
+  <p>An obvious question arises: if the quantum world is ruled by probabilities, and quantum mechanics describes the entire universe, isn't absolutely everything random then? In a way — yes, but in practice — no.</p>
+
+  <p>While an individual atom might decay randomly, when you consider macroscopic scales (like \(10^{23}\) atoms), the randomness statistically averages out. This is why classical behavior appears deterministic: the overwhelming number of tiny random events statistically balance each other, producing smooth, predictable outcomes.</p>
+
+  <h2>Is the Universe Random?</h2>
+  <p>In my opinion — yes, at its deepest level. Imagine a cosmic particle — a high-energy quantum particle from deep space — striking a cell in your brain. It could alter how a single neuron fires, leading to a different thought, and ultimately, a different decision. Thanks to chaotic amplification (known as the <a href="https://en.wikipedia.org/wiki/Butterfly_effect" target="_blank">Butterfly Effect</a>), the entire classical future could change as a result of one quantum event. </p>
+
+  <h2>Conclusions</h2>
+  <p>This remains one of the most profound topics in science and philosophy. Our understanding of quantum mechanics, chaos theory, and the nature of randomness continues to evolve. Some scientists still hold onto fully deterministic views of the universe, suggesting that randomness might only be apparent. And since much of what we believe rests on foundational axioms, it's fair to say: we still don't know everything — and maybe we never will.</p>
+
+</article>
+</main>
+
+<script>
+if (!localStorage.getItem('visitorCounted')) {
+  fetch('https://shiny-resonance-a493.kosteksw3.workers.dev/', { method: 'POST' });
+  localStorage.setItem('visitorCounted', 'true');
+}
+</script>
+
+<footer>
+  &copy; 2025 Kostek
+</footer>
+</body>
+</html>
