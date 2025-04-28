@@ -202,7 +202,12 @@ I also built software to process pictures of real pumps, converting pixel distan
 <p><a href="../physics.html" class="back-link">&larr; Back to Physics Section</a></p>
 
 </main>
-<script>fetch('https://api.countapi.xyz/hit/kostecki.life/visits');</script>
+<script>
+fetch('https://pagecounter.pro/api/v1/page/hit/kostecki.life')
+  .then(res => res.json())
+  .then(data => console.log(data.hits));
+</script>
+
 
 <footer>
   &copy; 2025 Kostek
